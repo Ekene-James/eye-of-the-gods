@@ -1,0 +1,76 @@
+.stage{
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+    margin:  200px;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    .ball{
+        border-radius: 50%;
+        height: 300px;
+        width: 300px;
+        background: radial-gradient(circle at 50% 35%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+        position: relative;
+        .iris{
+            position: absolute;
+            width: 40%;
+            height: 40%;
+            border-radius: 50%;
+            margin: 40px;
+            background: radial-gradient(circle at 50% 50%, #208ab4 0%, #6fbfff 30%, #4381b2 100%);
+            transform: translateX(110px) translateY(-10px) skewX(12deg) skewY(2deg);
+            animation: move-eye-skew 5s ease-out infinite;
+            &:before{
+                content: "";
+                position: absolute;
+                background: black;
+                border-radius: 50%;
+                width: 32%;
+                height: 32%;
+                top: 50px;
+                left: 40px;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                background: rgba(73, 71, 71,0.2);
+                border-radius: 50%;
+                width: 30%;
+                height: 30%;
+                top: 30px;
+                left: 30px;
+                
+            }
+        }
+            .shadow {
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 55%);
+            transform: rotateX(90deg) translateX(40px) translateZ(-150px);
+            z-index: -1;
+            border-radius: 50%;
+          } 
+    
+    }
+}
+@keyframes move-eye-skew {
+    0% {
+      transform: none;
+    }
+    20% {
+        transform: translateX(70px) translateY(70px) ;
+    }
+    25%, 44% {
+       
+        transform: translateX(-10px) translateY(100px) ;
+    }
+    50%, 60% {
+        transform: translateX(10px) translateY(70px) ;
+        
+        
+    }
+    66%, 100% {
+      transform: none;
+    }
+  }
